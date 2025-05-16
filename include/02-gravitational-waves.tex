@@ -1,0 +1,91 @@
+
+Gravitational waves are essentially vibrations in this small deviation $h_{\mu\nu}$ from a otherwise flat spacetime, as is given by the relationship
+\begin{equation}
+    g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu}.
+\end{equation} 
+We also assume that the preturbation as well as it's rate of change are small compared to the components of $\eta_{\mu\nu}$
+\begin{equation}
+    |h_{\mu\nu}| \ll 1, |h_{\mu\nu,\sigma}| \ll 1.
+\end{equation}
+This let's us ignore any terms which would be proportional the the perturbation squared as well as the product of the perturbation and it's 
+derivative.
+\\[1em]
+To deduce the equation for gravitational waves, we are going to need to calculate:
+\begin{itemize}
+    \item the inverse metric $g^{\mu\nu}$,
+    \item the connection coefficients $\Gamma^{\sigma}_{\;\mu\nu}$,
+    \item the Riemann tensor $R^\rho_{\;\sigma\mu\nu}$,
+    \item the Ricci tensor $R_{\mu\nu}$ and
+    \item the Ricci scalar $R$.
+\end{itemize}
+
+\subsection{The inverse metric $g^{\mu\nu}$}
+
+Let us assume that the inverse metric will be given by
+\begin{equation}
+    g^{\mu\nu} = \eta^{\mu\nu} + k^{\mu\nu},
+\end{equation}
+with $k^{\mu\nu}$ being some small ($|k^{\mu\nu}|\ll1$) but arbitrary different perturbation generally not inverse to the $h_{\mu\nu}$. We can calculate the $k^{\mu\nu}$ in the following way.
+$$g_{\mu\sigma}g^{\sigma\nu} = \delta_{\mu}^{\;\nu}$$
+$$(\eta_{\mu\sigma}+h_{\mu\sigma})(\eta^{\sigma\nu}+k^{\sigma\nu}) = \delta_{\mu}^{\;\nu}$$
+$$\eta_{\mu\sigma}\eta^{\sigma\nu}+\eta_{\mu\sigma}k^{\sigma\nu}+h_{\mu\sigma}\eta^{\sigma\nu}+h_{\mu\sigma}k^{\sigma\nu} = \delta_{\mu}^{\;\nu}$$
+$$\delta_{\mu}^{\;\nu}+\eta_{\mu\sigma}k^{\sigma\nu}+h_{\mu\sigma}\eta^{\sigma\nu}+h_{\mu\sigma}k^{\sigma\nu} = \delta_{\mu}^{\;\nu}$$
+We can subtract the $\delta_{\mu}^{\;\nu}$ from both sides, the $h_{\mu\sigma}k^{\sigma\nu}$ term we can ignore, for it is a product of two small terms.
+\begin{equation}\label{hk}
+    \eta_{\mu\sigma}k^{\sigma\nu}+h_{\mu\sigma}\eta^{\sigma\nu} = 0    
+\end{equation}
+Now we can use $\eta_{\mu\sigma}$ to raise and lower the indicies, normally we should use the entire metric $g_{\mu\nu}$ to do so, but since that would lead to
+$$k^\mu_{\;\nu} = g_{\nu\sigma}k^{\mu\sigma} = (\eta_{\nu\sigma} + h_{\nu\sigma})k^{\mu\sigma} \approx \eta_{\nu\sigma}k^{\mu\sigma},$$
+because the term $h_{\nu\sigma}k^{\mu\sigma}$ is second order in small quantities we can ignore it and essentially use only the $\eta_{\nu\sigma}$ to lower the index anyway. This lets us rewrite the equation \ref{hk} in a following way.
+$$k_{\mu}^{\;\nu} = -h_{\mu}^{\;\nu}$$
+$$k_{\mu}^{\;\nu}\eta^{\mu\rho} = -h_{\mu}^{\;\nu}\eta^{\mu\rho}$$
+$$k^{\;\rho\nu} = -h^{\rho\nu}$$
+We can see that the perturbation $k^{\mu\nu}$ in the inverse metric $g^{\mu\nu}$ is equal to $-h^{\mu\nu}$, therefore we get
+$$\boxed{g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu}}$$
+$$\boxed{g^{\mu\nu} = \eta^{\mu\nu} - h^{\mu\nu}}$$
+while $h^{\mu\nu}$ is not inverse to $h_{\mu\nu}$ but is just equal to $h_{\mu\nu}$ with both indices raised by the Minkowski metric $h^{\mu\nu} = h_{\rho\sigma}\eta^{\rho\mu}\eta^{\sigma\nu}$.
+
+\subsection{The connection coefficients $\Gamma^{\sigma}_{\;\mu\nu}$}
+
+In any general metric, the connection coefficients are calculated as
+$$\Gamma^{\sigma}_{\;\mu\nu}=\frac{1}{2}g^{\sigma\rho}(-g_{\mu\nu,\rho}+g_{\rho\mu,\nu}+g_{\nu\rho,\mu}).$$
+Given our metric $g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu}$, any derivatives of type $\eta_{\mu\nu,\rho}$ vanish since $\eta_{\mu\nu}$ is contant and the connection coefficient simplifies to
+$$\Gamma^{\sigma}_{\;\mu\nu}=\frac{1}{2}g^{\sigma\rho}(-h_{\mu\nu,\rho}+h_{\rho\mu,\nu}+h_{\nu\rho,\mu}).$$
+Now if we substitute $(\eta^{\sigma\rho} - h^{\sigma\rho})$ for $g^{\sigma\rho}$ and multiply the brackets, we can leave out all the terms proportional to product of $h^{\sigma\rho}$ and it's derivative, leaving us with only 3 terms inside the bracket. Namely those that were multiplied by $\eta^{\sigma\rho}$. The connection coefficients take the following form.
+\begin{equation}\boxed{
+    \Gamma^{\sigma}_{\;\mu\nu}=\frac{1}{2}\eta^{\sigma\rho}(-h_{\mu\nu,\rho}+h_{\rho\mu,\nu}+h_{\nu\rho,\mu})}
+\end{equation}
+
+\newpage
+\subsection{Riemann tensor $R^\rho_{\;\sigma\mu\nu}$}
+
+Now that we have found the connection coefficients, we can use them to calculate the Riemann tensor as follows.
+$$R^\rho_{\;\sigma\mu\nu} = -\Gamma^\rho_{\;\sigma\mu,\nu}+\Gamma^\rho_{\;\sigma\nu,\mu}-\Gamma^\lambda_{\;\sigma\mu}\Gamma^\rho_{\;\nu\lambda}+\Gamma^\lambda_{\;\sigma\nu}\Gamma^\rho_{\;\mu\lambda}$$
+The last two terms, being products of two connection coefficient, yield 9 terms each but all of them proportional to the product of two $h_{\mu\nu}$ derivatives and can therefore be ignored. This fact lets us simplify the Riemann tensor to a much simpler form.
+$$R^\rho_{\;\sigma\mu\nu} = -\Gamma^\rho_{\;\sigma\mu,\nu}+\Gamma^\rho_{\;\sigma\nu,\mu}$$
+$$\Gamma^\rho_{\;\sigma\mu,\nu} = \frac{1}{2}[\eta^{\rho\alpha}(-h_{\sigma\mu,\alpha}+h_{\alpha\sigma,\mu}+h_{\mu\alpha,\sigma})]_{,\nu}$$
+$$\Gamma^\rho_{\;\sigma\mu,\nu} = \frac{1}{2}\eta^{\rho\alpha}(-h_{\sigma\mu,\alpha\nu}+h_{\alpha\sigma,\mu\nu}+h_{\mu\alpha,\sigma\nu})$$
+$$R^\rho_{\;\sigma\mu\nu} = \frac{1}{2}\eta^{\rho\alpha}(h_{\sigma\mu,\alpha\nu}-h_{\alpha\sigma,\mu\nu}-h_{\mu\alpha,\sigma\nu}-h_{\sigma\nu,\alpha\mu}+h_{\alpha\sigma,\nu\mu}+h_{\nu\alpha,\sigma\mu})$$
+We are of course taking derivatives of the products $\eta^{\rho\alpha}h_{\sigma\mu,\alpha}$, but $\eta^{\rho\alpha}$ is just a matrix of constants, so we're just left with the $h_{\sigma\mu,\alpha}$ like derivatives. Now since the order of partial derivatives does not matter, the terms $h_{\alpha\sigma,\mu\nu}$ and $h_{\alpha\sigma,\nu\mu}$ are identical and cancel out.
+\begin{equation}
+\boxed{R^\rho_{\;\sigma\mu\nu} = \frac{1}{2}\eta^{\rho\alpha}(h_{\sigma\mu,\alpha\nu}-h_{\mu\alpha,\sigma\nu}-h_{\sigma\nu,\alpha\mu}+h_{\nu\alpha,\sigma\mu})}
+\end{equation}
+
+\subsection{Ricci tensor $R_{\sigma\nu}$}
+
+The Ricci tensor is calculated by contracting the Riemann tensor in first and third index $R_{\sigma\nu} = R^{\mu}_{\;\sigma\mu\nu}$.
+$$R^\mu_{\;\sigma\mu\nu} = \frac{1}{2}\eta^{\mu\alpha}(h_{\sigma\mu,\alpha\nu}-h_{\mu\alpha,\sigma\nu}-h_{\sigma\nu,\alpha\mu}+h_{\nu\alpha,\sigma\mu})$$
+$$R^\mu_{\;\sigma\mu\nu} = \frac{1}{2}(h^{\;\alpha}_{\sigma\;,\alpha\nu}-h_{\mu\alpha,\sigma\nu}-h_{\sigma\nu,\alpha\mu}+h^{\;\mu}_{\nu\;,\sigma\mu})$$
+% DOZVEDAT INDEXY (JEŠTĚ 2)
+
+
+
+
+
+
+
+
+
+%\begin{equation}\label{gwave}
+%    \frac{\partial^2 g_{\mu\nu}}{\partial x^2}
+%\end{equation}
